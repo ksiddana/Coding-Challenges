@@ -1,0 +1,32 @@
+Group Formation
+
+Get into your assigned groups (end of this document)
+
+Each member should spend five minutes (no talking) answering the following questions:
+
+What are my 2 greatest technical strengths?
+
+- Backend
+- Database
+- Connecting External API's
+- Visualization using Graphs
+- Math, Physics Engine
+- Machine Learning algorithms
+
+What are my 2 greatest technical challenges?
+- Front-end
+- CSS Styling
+- Data Structures, Complex Data Structures
+- Draw Relationships between Data points
+
+
+What are my personal goals for this project?
+- Complex Data Structure that challenges me to solve a real world problem
+- Ideas for solving problems in developing countries
+- Ability to make a product that end would have at least have 10 users.
+- Not worried about the Stack/Mobile/ Deployment
+
+
+Group Discussion
+
+Discuss your individual answers with your group. Get to know each other.
