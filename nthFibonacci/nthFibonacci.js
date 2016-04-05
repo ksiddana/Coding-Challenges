@@ -38,7 +38,23 @@ var nthFibonacci = function (n) {
   return result;
 };
 
-var result = nthFibonacci(20);
-console.log(result);
+// var result = nthFibonacci(20);
+// console.log(result);
+
+
+var memo = [];
+
+function _fibonacci(n) {
+   if(memo[n]){    
+    return memo[n];
+   }
+   else if (n < 2){
+     return 1;
+   }else{
+     nthFibonacci(n-2) + nthFibonacci(n-1);
+   }
+}
+
+console.log(_fibonacci(3))
 
 

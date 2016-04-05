@@ -21,7 +21,6 @@ var sumInLoop = function(stirng) {
   for (var i = 1; i < output.length; i++) {
     var line = output[i].split(' ');
     var sum = parseInt(line[0]) + parseInt(line[1]);
-    result.shift();
     result.push(sum);
   }
 

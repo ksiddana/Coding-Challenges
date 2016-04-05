@@ -39,24 +39,34 @@ var Tree = function(value){
 
 Tree.prototype.BFSelect = function(filter) {
   // return an array of values for which the function filter(value, depth) returns true
-  var result = [];
-  var queue = [];
-
-  queue.push({ tree: this, depth: 0 });
-
-  while (current) {
-
-    if ( filter(current.tree.value, current.depth) ) {
-      result.shift(current.tree.value);
+  var results = [];
+  //subroutine for recursion
+  var recursion = function(nodesOnALevel, depth){
+    //nodesOnALevel = [] of nodes
+    var whiteVan = [];
+    //iterate across nodes on this level
+    for (var i = 0; i < nodesOnALevel.length; i++) {
+      //check the filter condition on this nodes
+      if(filter(nodesOnALevel[i].value, depth)){
+        results.push(nodesOnALevel[i].value);
+      }
+      //grab the children
+      for (var j = 0; j < nodesOnALevel[i].children.length; j++) {
+        whiteVan.push(nodesOnALevel[i].children[j]);
+      }
     }
 
-    current.tree.children.forEach(function(child) {
-      queue.push({ tree: child, depth: depth + 1 });
-    })
-  }
-
-  return result;
-
+    console.log(whiteVan);
+    
+    //move down a level
+    if(whiteVan.length){
+      recursion(whiteVan, depth+1);
+    }
+  };
+  //start the recursion
+  recursion([this], 0);
+  //return array of results
+  return results;
 };
 
 /**
@@ -121,9 +131,11 @@ var leaf5 = branch2.addChild(5);
 var leaf6 = branch3.addChild(6);
 var leaf7 = branch3.addChild(7);
 
-root1.BFSelect(function (value, depth) {
+var a = root1.BFSelect(function (value, depth) {
   return value % 2;
 })
+
+console.log(a);
 // [1, 3, 5, 7]
 
 /*root1.BFSelect(function (value, depth) {

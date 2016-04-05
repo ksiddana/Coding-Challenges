@@ -18,14 +18,14 @@ var anagrams = {};
 
   var generator = function(text, options) {
     
+    console.log("OPTIONS Slice:",text,"<-->",options);
+
     if (text.length === string.length) {
       anagrams[text] = true;
     }
 
     for (var i = 0; i < options.length; i++) {
-      console.log("OPTIONS Slice: ", i , ": ", options.slice(0,i), options.slice(i + 1));
-      generator(text + options[i],
-        options.slice(0,i) + options.slice(i + 1))
+      generator(text + options[i], options.slice(0,i) + options.slice(i + 1))
 
     }
   }
@@ -34,7 +34,7 @@ var anagrams = {};
 };
 
 
-var anagrams = allAnagrams('abc');
+var anagrams = allAnagrams('ab');
 console.log(anagrams); // [ 'abc', 'acb', 'bac', 'bca', 'cab', 'cba' ]
 
 

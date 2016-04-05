@@ -129,7 +129,7 @@ var merge = function(left, right) {
 
   
 
-  console.log("Result:",result);
+  // console.log("Result:",result);
   return result;
 }
 

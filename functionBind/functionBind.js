@@ -28,7 +28,7 @@ var bind = function(callback, context) {
   var prevArgs = Array.prototype.slice.call(arguments, 2);
   return function() {
 
-    return callback.apply(context, args);
+    return callback.apply(context, prevArgs);
   }
 };
 

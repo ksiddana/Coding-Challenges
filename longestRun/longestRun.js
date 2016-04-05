@@ -37,7 +37,7 @@ var longestRun = function (string) {
     if (storage[key].count > temp){
       tempLetter = key;
       temp = storage[key].count;
-      longestCharacter.push(count)
+      longestCharacter.push(temp)
     } 
   }
 

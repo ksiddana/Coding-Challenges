@@ -74,6 +74,7 @@ var rotateMatrix = function(matrix, direction) {
       }
       
     }
+    console.log(currentRow);
     rotatedMatrix.push(currentRow);
   }
 
@@ -97,4 +98,4 @@ var matrix = [
 matrix[0][0]; // 1
 matrix[3][2]; // 'F'
 
-console.log(rotateMatrix(matrix1, -1));
+console.log(rotateMatrix(matrix1, 1));

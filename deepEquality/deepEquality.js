@@ -41,8 +41,6 @@ var deepEquals1 = function(apple, orange) {
       }
     }
 
-
-
   }
   subroutine(apple, orange);
   console.log(Object.keys(result));
