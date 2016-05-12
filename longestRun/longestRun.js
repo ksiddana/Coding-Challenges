@@ -29,7 +29,7 @@ var longestRun = function (string) {
     if (!storage[currentLetter]) {
       storage[currentLetter] = {count: 1, index: i};
     } else {
-      storage[currentLetter] = {count: storage[currentLetter].count + 1, index: i };
+      storage[currentLetter].count += 1;
     }
   }
 

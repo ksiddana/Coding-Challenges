@@ -18,9 +18,7 @@
 // if you reach the end of the array, put those numbers in the ouptut of the array
 //  if you next row is odd, reverse the array and splice out the fisrt number
 
-
-
-var spiralTraversal = function(matrix){
+var spiralTraversal = function (matrix) {
 
   // TODO: Implement me!
   var results = [];
@@ -30,22 +28,25 @@ var spiralTraversal = function(matrix){
   var endColIndex = matrix[0].length - 1;
 
   while (startRowIndex <= endRowIndex && startColIndex <= endColIndex) {
-    
+
     for (var i = startColIndex; i <= endColIndex; i++) {
       results.push(matrix[startRowIndex]);
     }
+
     startRowIndex++;
 
-    for (var j = startRowIndex; j <= endRowIndex; j++){
-      results.push(matrix[j],endColIndex);
-    }
-    endColIndex--;
+    // for (var j = startRowIndex; j <= endRowIndex; j++) {
+    //   results.push(matrix[endColIndex]);
+    // }
+
+    // endColIndex--;
 
     if (startRowIndex <= endRowIndex) {
 
       for (var k = endColIndex; k >= startColIndex; k--) {
         results.push(matrix[endRowIndex]);
       }
+
       endRowIndex--;
     }
 
@@ -53,6 +54,7 @@ var spiralTraversal = function(matrix){
       for (var m = endRowIndex; m >= startRowIndex; m--) {
         results.push(matrix[m][startColIndex]);
       }
+
       startColIndex++;
     }
   }
@@ -63,7 +65,7 @@ var spiralTraversal = function(matrix){
 };
 
 spiralTraversal([
-      [1,2,3],
-      [4,5,6],
-      [7,8,9]
+      [1, 2, 3],
+      [4, 5, 6],
+      [7, 8, 9],
     ]);

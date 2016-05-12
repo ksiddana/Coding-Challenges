@@ -12,31 +12,29 @@
   * console.log(anagrams); // [ 'abc', 'acb', 'bac', 'bca', 'cab', 'cba' ]
   */
 
-var allAnagrams = function(string) {
+var allAnagrams = function (string) {
   // Your code here.
-var anagrams = {};
+  var anagrams = {};
 
-  var generator = function(text, options) {
-    
-    console.log("OPTIONS Slice:",text,"<-->",options);
+  var generator = function (text, options) {
+
+    console.log('OPTIONS Slice:', text, '<-->', options);
 
     if (text.length === string.length) {
       anagrams[text] = true;
     }
 
     for (var i = 0; i < options.length; i++) {
-      generator(text + options[i], options.slice(0,i) + options.slice(i + 1))
+      generator(text + options[i], options.slice(0, i) + options.slice(i + 1));
 
     }
-  }
+  };
+
   generator('', string);
   return Object.keys(anagrams);
 };
 
-
-var anagrams = allAnagrams('ab');
+var anagrams = allAnagrams('abc');
 console.log(anagrams); // [ 'abc', 'acb', 'bac', 'bca', 'cab', 'cba' ]
-
-
 
 //string  i   options   text
