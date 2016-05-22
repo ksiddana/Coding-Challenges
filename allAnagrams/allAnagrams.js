@@ -15,51 +15,24 @@
 var allAnagrams = function(string) {
   // Your code here.
   var output = [];
-  var combinations = [];
+  var combinations = {};
 
-  // console.log(typeof combinations);
+  var recurse = function(ana, str) {
 
-  var recursiveFunction = function() {
-    
-    // Base Case for recursion, when the to insert a 
-    // Combination into output.
-    if (combinations.length === string.length ) {
-      output.push(combinations.slice().join(""));
-      return;
+    // console.log(ana);
+    if (ana.length === string.length) {
+      combinations[ana] = true
     }
 
-    // Iterate through the string
-      // When you reach the first letter, 
-        // Check if there are more letters in the string
-        // Push that letter into the combinations Array
-        // Open up a new function, pass in the sliced array.
-        // Keep adding the values of the element, till you
-        // reach the end of the element
-    for (var i = 0; i < string.length; i++) {
-
-      combinations.push(string[i]);
-      recursiveFunction()
-      // console.log(combinations);
-      combinations.pop();
-      /*combinations.push(string[i]);
-
-      console.log(combinations);
-
-      
-      if (combinations.length !== string.length) {
-        recursiveFunction(  combinations.slice());
-      }
-      // console.log(combinations);
-      
-      combinations.pop();*/
+    for (var i = 0; i < str.length; i++) {
+      var c = str[i]
+      recurse(ana + c, str.substring(0, i) + str.substring(i + 1, str.length))
     }
   }
 
-  recursiveFunction();
-  // console.log(combinations);
-  console.log(output);
-  return combinations;
+  recurse('', string);
+  return Object.keys(combinations);
 };
 
 var anagrams = allAnagrams('abc');
-// console.log(anagrams); // [ 'abc', 'acb', 'bac', 'bca', 'cab', 'cba' ]
+console.log(anagrams); // [ 'abc', 'acb', 'bac', 'bca', 'cab', 'cba' ]

@@ -34,7 +34,7 @@ var longestPalindrome = function (string) {
         var sub = string.slice(i, j+1);
         var p = isPalindrome(sub);
           
-        if (p && longest < sub.length) {
+        if (p < sub.length) {
           longest = sub;
         }
           

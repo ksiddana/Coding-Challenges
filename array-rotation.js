@@ -23,6 +23,6 @@ function rotate(array, k) {
 }
 
 
-var b = rotate(array, 3);
+var b = rotate(array, 2);
 
 console.log(b);

@@ -10,6 +10,7 @@ var firstNonRepeatedCharacter = function(string) {
   // TODO: your solution here
   var nonrepeatedCharacters = {};
   var found = false;
+  var result;
 
   for (var i = 0; i < string.length; i++) {
 
@@ -24,15 +25,19 @@ var firstNonRepeatedCharacter = function(string) {
   for (var i = 0; i < string.length; i++) {
     if (nonrepeatedCharacters[string[i]] === 1 && !found) {
       found = true
-      console.log(string[i])
-      return string[i]
+      // console.log(string[i])
+      // return string[i]
+      result = string[i];
     }
   }
 
-
   console.log(nonrepeatedCharacters);
+  return result
 
 };
 
-firstNonRepeatedCharacter('ABA');
-firstNonRepeatedCharacter('ACABDBE');
+var a = firstNonRepeatedCharacter('ABA');
+var b = firstNonRepeatedCharacter('ACACBDBE');
+
+console.log(a);
+console.log(b);

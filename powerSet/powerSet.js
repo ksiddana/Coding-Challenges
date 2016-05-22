@@ -23,21 +23,7 @@
 
 var powerSet = function(str){
 
-  var result = {};
-  var combinations = [];
   str = str || '';
-
-  var letters = {};
-
-     for (var i = 0; i < str.length; i++) {
-
-      letters[str[i]] = true;
-    }
-
-  // letters = { m}  
-  str = Object.keys(letters).join('');
-
-  // Loop through the children and splice out one letter
 
   var solutions = {};
 

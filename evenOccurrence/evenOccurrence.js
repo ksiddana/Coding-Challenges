@@ -32,7 +32,7 @@ var evenOccurrence = function(array) {
     }
   }
 
-  // console.log(result);
+  console.log(result);
 };
 
 var onlyEven = evenOccurrence([1, 7, 2, 4, 5, 6, 8, 9, 6, 4]);
