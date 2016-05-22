@@ -44,7 +44,7 @@ var shuffleDeck = function(deck) {
     deck[index] = temp;
   }
 
-  console.log(deck.length);
+  console.log(deck);
   return deck;
 };
 

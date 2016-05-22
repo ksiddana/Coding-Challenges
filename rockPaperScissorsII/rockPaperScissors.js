@@ -24,18 +24,18 @@
 *
 */
 
-// 
+//
 
 var rockPaperScissors = function () {
   // TODO: your solution here
-  var inputs = ['rock', 'paper', 'scissors']
+  var inputs = ['rock', 'paper', 'scissors'];
   var output = [];
   var currentRound = [];
 
-  var recursiveCall = function(roundsToGo) {
+  var recursiveCall = function (roundsToGo) {
 
     if (roundsToGo === 0) {
-      output.push(currentRound.slice())
+      output.push(currentRound.slice());
       return;
     }
 
@@ -45,7 +45,7 @@ var rockPaperScissors = function () {
       currentRound.pop();
     };
 
-  }
+  };
 
   recursiveCall(3);
   console.log(output);

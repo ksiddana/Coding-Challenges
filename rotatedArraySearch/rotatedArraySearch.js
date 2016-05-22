@@ -95,19 +95,44 @@ var rotatedArraySearch3 = function (rotated, target) {
   // Your code here:
 
   var left = 0;
+  var right = rotated.length - 1;
 
+  while( left <= right) {
+    var middle = Math.floor((right + left) /2);
 
+    if (rotated[middle] === target) {
+      return middle;
+    }
 
+    // Middle becomes the starting Point
+    if (rotated[left] <= rotated[middle]) {
+      
+      if (rotated[left] <= target && target < rotated[middle]) {
+        right = middle - 1;
+      } else {
+        left = middle + 1;
+      }
+    } else {
+
+      if (rotated[middle] < target && target <= rotated[right]) {
+        left = middle + 1;
+      } else {
+        right = middle - 1;
+      }
+    }
+  }
+
+  return null;
 };
 
 
-var test3 = rotatedArraySearch2([4, 5, 6, 0, 1, 2, 3], 5)
-// var test4 = rotatedArraySearch2([4, 5, 6, 0, 1, 2, 3], 4)
-// var test5 = rotatedArraySearch2([4, 5, 6, 0, 1, 2, 3], 3)
+var test3 = rotatedArraySearch3([4, 5, 6, 0, 1, 2, 3], 5)
+var test4 = rotatedArraySearch3([4, 5, 6, 0, 1, 2, 3], 4)
+var test5 = rotatedArraySearch3([4, 5, 6, 0, 1, 2, 3], 3)
 
 console.log(test3);
-// console.log(test4);
-// console.log(test5);
+console.log(test4);
+console.log(test5);
 
 
 // var test1 = rotatedArraySearch([4, 5, 6, 0, 1, 2, 3], 2)
